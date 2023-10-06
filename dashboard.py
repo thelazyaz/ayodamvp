@@ -72,7 +72,7 @@ if st.button("Submit", type="primary"):
         y_test = y[300:]
 
         st.markdown("## Model Predictions")
-        st.markdown("### This is how our model performed on the past 2 months of your data")
+        st.markdown("### This is how our model performed on the past 2 months of your data and its predictions for the next two weeks")
         st.image("ml_ouput.png")
 
         st.markdown(f"The model is accurate to +/- 24 orders which represents {round((24/np.mean(y_test))*100, 2)}% of your average daily orders")
