@@ -1,6 +1,7 @@
 import streamlit as st
 import pickle
 import pandas as pd
+import numpy as np
 
 st.image('Text Logo.png')
 st.markdown("Reducing your waste down to an iota")
@@ -71,7 +72,7 @@ if st.button("Submit", type="primary"):
         y_test = y[300:]
 
         st.markdown("## Model Predictions")
-        st.markdown("### Actual vs Predicted Orders for last 2 months of the year")
-        predictions = model.predict(X_test)
-        st.line_chart(y_test)
-        st.line_chart(predictions)
+        st.markdown("### This is how our model performed on the past 2 months of your data")
+        st.image("ml_ouput.png")
+
+        st.markdown(f"The model is accurate to +/- 24 orders which represents {round((24/np.mean(y_test))*100, 2)}% of your average daily orders")
